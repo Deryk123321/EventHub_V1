@@ -1,0 +1,490 @@
+/* ==========================================================================
+   EMS - PLATAFORMA DE BILHETERIA E GESTÃO DE EVENTOS
+   Sistema de Design & Folha de Estilos Completa
+   Paleta Primária: Tons de Laranja Acolhedores e Profissionais
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS DE DESIGN SYSTEM (CSS Custom Properties)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores Primárias - Laranja */
+  --primary-50: #fff7ed;
+  --primary-100: #ffedd5;
+  --primary-200: #fed7aa;
+  --primary-300: #fdba74;
+  --primary-400: #fb923c;
+  --primary-500: #f97316; /* Cor Principal */
+  --primary-600: #ea580c; /* Hover Principal */
+  --primary-700: #c2410c; /* Active / Destaque Escuro */
+  --primary-800: #9a3412;
+  --primary-900: #7c2d12;
+  --primary-950: #431407;
+
+  /* Cores Neutras e Neutras Aquecidas */
+  --slate-50: #fafaf9;
+  --slate-100: #f5f5f4;
+  --slate-200: #e7e5e4;
+  --slate-300: #d6d3d1;
+  --slate-400: #a8a29e;
+  --slate-500: #78716c;
+  --slate-600: #57534e;
+  --slate-700: #44403c;
+  --slate-800: #292524;
+  --slate-900: #1c1917;
+
+  /* Feedback & Estados */
+  --color-success: #16a34a;
+  --color-success-bg: #f0fdf4;
+  --color-error: #dc2626;
+  --color-error-bg: #fef2f2;
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbeb;
+
+  /* Superfícies & Bordas */
+  --bg-page: var(--slate-50);
+  --bg-surface: #ffffff;
+  --border-color: var(--slate-200);
+  --border-focus: var(--primary-500);
+
+  /* Tipografia */
+  --font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+
+  /* Espaçamentos & Raio de Borda */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(249, 115, 22, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(249, 115, 22, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-orange: 0 4px 14px 0 rgba(249, 115, 22, 0.35);
+
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET CSS & CONFIGURAÇÕES BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--slate-800);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilitários para ocultar etapas e elementos no JS */
+.hidden {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVEGAÇÃO SUPERIOR (Topbar & Navbar)
+   -------------------------------------------------------------------------- */
+.topbar {
+  background-color: var(--bg-surface);
+  border-bottom: 2px solid var(--primary-100);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.topbar nav a {
+  text-decoration: none;
+  color: var(--slate-700);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.topbar nav a:hover {
+  color: var(--primary-600);
+  background-color: var(--primary-50);
+}
+
+/* Link ativo / de destaque no menu */
+.topbar nav a[href*="cadastro"], 
+.topbar nav a[href*="login"] {
+  border: 1px solid var(--primary-200);
+  color: var(--primary-700);
+}
+
+.topbar nav a[href*="cadastro"]:hover {
+  background-color: var(--primary-500);
+  color: #ffffff;
+  border-color: var(--primary-500);
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT PRINCIPAL E CONTAINERS
+   -------------------------------------------------------------------------- */
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 92%;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--primary-900);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  color: var(--primary-800);
+  margin-bottom: 0.5rem;
+}
+
+/* Container do Formulário */
+.container {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--primary-100);
+  padding: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. BARRA DE PROGRESSO (Multi-Step Form)
+   -------------------------------------------------------------------------- */
+.barra {
+  width: 100%;
+  height: 10px;
+  background-color: var(--primary-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.progresso {
+  height: 100%;
+  width: 20%; /* Controlado dinamicamente via JS */
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   6. SEÇÕES DE ETAPAS E FORMULÁRIOS
+   -------------------------------------------------------------------------- */
+.etapa {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn var(--transition-normal);
+}
+
+.etapa p {
+  color: var(--slate-500);
+  font-size: var(--font-size-sm);
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Rótulos e Campos de Entrada */
+label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--slate-700);
+  margin-bottom: -0.25rem;
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  color: var(--slate-800);
+  background-color: var(--slate-50);
+  border: 1.5px solid var(--slate-300);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-500);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px var(--primary-100);
+}
+
+/* Campos Apenas Leitura (Ex: Endereço do CEP) */
+input[readonly] {
+  background-color: var(--primary-50);
+  border-color: var(--primary-200);
+  color: var(--primary-900);
+  cursor: not-allowed;
+}
+
+/* Inputs Especiais */
+input[type="file"] {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border: 1.5px dashed var(--primary-300);
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  border-color: var(--primary-500);
+  background-color: var(--primary-50);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilização dos Checkboxes */
+label[for="infovd"],
+label[for="termos"] {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primary-500);
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   7. BOTÕES E AÇÕES
+   -------------------------------------------------------------------------- */
+button,
+.btn {
+  padding: 0.75rem 1.75rem;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Botão Primário (Avançar / Cadastrar) */
+button[id^="avancar"],
+button[type="submit"],
+.btn-primary {
+  background-color: var(--primary-500);
+  color: #ffffff;
+  box-shadow: var(--shadow-orange);
+}
+
+button[id^="avancar"]:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background-color: var(--primary-600);
+  transform: translateY(-1px);
+}
+
+button[id^="avancar"]:active,
+button[type="submit"]:active,
+.btn-primary:active {
+  background-color: var(--primary-700);
+  transform: translateY(0);
+}
+
+/* Botão Secundário (Voltar) */
+button[id^="voltar"],
+.btn-secondary {
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  border: 1px solid var(--slate-300);
+}
+
+button[id^="voltar"]:hover,
+.btn-secondary:hover {
+  background-color: var(--slate-200);
+  color: var(--slate-900);
+}
+
+/* Botão Pular Etapa */
+button#pular {
+  background-color: transparent;
+  color: var(--primary-700);
+  border: 1px dashed var(--primary-300);
+}
+
+button#pular:hover {
+  background-color: var(--primary-50);
+}
+
+/* Organização de Botões no Rodapé do Form */
+.etapa button + button {
+  margin-left: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. DASHBOARD E PAINEL DA EMPRESA
+   -------------------------------------------------------------------------- */
+#banner {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+#acoes {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--primary-100);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+#acoes h4 {
+  width: 100%;
+  color: var(--primary-900);
+  font-size: var(--font-size-lg);
+  margin-bottom: 0.5rem;
+}
+
+#acoes button {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  border: 1px solid var(--primary-200);
+}
+
+#acoes button:hover {
+  background-color: var(--primary-500);
+  color: #ffffff;
+}
+
+/* Gráfico */
+#grafico-container {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--primary-100);
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   9. MENSAGENS DE ERRO E FEEDBACK
+   -------------------------------------------------------------------------- */
+.field-error {
+  border-color: var(--color-error) !important;
+  background-color: var(--color-error-bg) !important;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  margin-top: -0.5rem;
+}
+
+small {
+  color: var(--slate-500);
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+  display: block;
+}
+
+a {
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-800);
+}
+
+/* --------------------------------------------------------------------------
+   10. RESPONSIVIDADE (Mobile & Tablets)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .topbar nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .etapa button + button {
+    margin-left: 0;
+  }
+}
