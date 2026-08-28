@@ -1,647 +1,383 @@
-<!-- Define que o documento usa HTML5. -->
 <!doctype html>
-<!-- Inicia o documento HTML e informa que o idioma principal é português do Brasil. -->
 <html lang="pt-br">
-  <!-- Inicia a área de configurações e recursos da página. -->
   <head>
-    <!-- Define a codificação de caracteres como UTF-8, permitindo acentos e caracteres especiais. -->
     <meta charset="utf-8">
-    <!-- Faz a página se adaptar corretamente a diferentes tamanhos de tela. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Define o título exibido na aba do navegador. -->
     <title>EventHub</title>
     <!-- Define o ícone (favicon) usado na aba do navegador. -->
     <link rel="icon" href="assets/Tipografia-da-logo-2-com-apenas-EH.png" type="image/x-icon">
     <!-- Importa a biblioteca Font Awesome para utilizar ícones. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Importa o CSS do Bootstrap para utilizar componentes e classes prontas. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     
    
-    <!-- Inicia os estilos CSS personalizados da página. -->
     <style>
-        /* Seleciona body para aplicar os estilos abaixo. */
         body {
-            /* Define a cor de fundo. */
             background-color: #25292c;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
-        /* Seleciona .navegacao para aplicar os estilos abaixo. */
         .navegacao {
-            /* Define a cor de fundo. */
             background-color: #00bbff;
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .marca-navegacao para aplicar os estilos abaixo. */
         .marca-navegacao {
-            /* Define a espessura do texto. */
             font-weight: bold;
-            /* Define o tamanho da fonte. */
             font-size: 2.5rem;
-            /* Define a cor do texto. */
             color: white;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .navegacao .link-nav para aplicar os estilos abaixo. */
         .navegacao .link-nav {
-            /* Define a cor do texto. */
             color: white;
-            /* Define a espessura do texto. */
             font-weight: 600;
-            /* Define o espaçamento externo. */
             margin: 0 60px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .navegacao .link-nav:hover para aplicar os estilos abaixo. */
         .navegacao .link-nav:hover {
-            /* Define a cor do texto. */
             color: #ff0000;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateY(-2px);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .nav-link para aplicar os estilos abaixo. */
         .nav-link {
-            /* Define a cor do texto. */
             color: white !important;
-            /* Define a espessura do texto. */
             font-weight: 600;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: all 0.3s ease;
-            /* Define o tamanho da fonte. */
             font-size: 6rem;
             
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .nav-link:hover para aplicar os estilos abaixo. */
         .nav-link:hover {
-            /* Define a cor do texto. */
             color: #2d7d72 !important;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateY(-6px);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .nav-link h3 para aplicar os estilos abaixo. */
         .nav-link h3 {
-            /* Define o tamanho da fonte. */
             font-size: 1.25rem;
-            /* Define o espaçamento externo. */
             margin: 10px 0;
-            /* Define a espessura do texto. */
             font-weight: 700;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .dropdown-menu para aplicar os estilos abaixo. */
         .dropdown-menu {
-            /* Define o fundo do elemento. */
             background: linear-gradient(135deg, #f6f6f8 0%, #fbf2f2 100%);
-            /* Define a borda do elemento. */
             border: 2px solid #E60012;
-            /* Arredonda os cantos. */
             border-radius: 15px;
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            /* Define o espaçamento externo superior. */
             margin-top: 10px;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: skew(-3deg);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .dropdown-item para aplicar os estilos abaixo. */
         .dropdown-item {
-            /* Define a cor do texto. */
             color: #ff0000;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: all 0.3s ease;
-            /* Define a espessura do texto. */
             font-weight: 600;
-            /* Define o espaçamento interno. */
             padding: 10px 20px;
-            /* Arredonda os cantos. */
             border-radius: 10px;
-            /* Define o espaçamento externo. */
             margin: 2px 5px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
         
-        /* Seleciona .dropdown-item:hover para aplicar os estilos abaixo. */
         .dropdown-item:hover {
-            /* Define a cor de fundo. */
             background-color: #E60012;
-            /* Define a cor do texto. */
             color: white;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateX(5px);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .dropdown-divider para aplicar os estilos abaixo. */
         .dropdown-divider {
-            /* Define a propriedade CSS border-top. */
             border-top: 1px solid #E60012;
-            /* Define o espaçamento externo. */
             margin: 5px 0;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona #carouselEventos para aplicar os estilos abaixo. */
         #carouselEventos{
-            /* Define a largura máxima. */
             max-width: 900px;
-            /* Define o espaçamento externo. */
             margin: auto;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .carousel-item img para aplicar os estilos abaixo. */
         .carousel-item img{
-            /* Define a largura. */
             width:600px;
-            /* Define a altura. */
             height: 500px;
-            /* Define como a imagem se ajusta dentro da área disponível. */
             object-fit: cover;
-            /* Arredonda os cantos. */
             border-radius:20px;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: .6s;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
         .carousel-control-prev,
-        /* Seleciona .carousel-control-next para aplicar os estilos abaixo. */
         .carousel-control-next{
-            /* Define a largura. */
             width:60px;
-            /* Define a altura. */
             height:60px;
-            /* Define o fundo do elemento. */
             background:#fff;
-            /* Arredonda os cantos. */
             border-radius:50%;
-            /* Define a posição superior. */
             top:50%;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform:translateY(-50%);
-            /* Define o nível de transparência. */
             opacity:1;
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow:0 0 15px rgba(0,0,0,.2);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .carousel-control-prev para aplicar os estilos abaixo. */
         .carousel-control-prev{
-            /* Define a posição à esquerda. */
             left:-30px;
             
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .carousel-control-next para aplicar os estilos abaixo. */
         .carousel-control-next{
-            /* Define a posição à direita. */
             right:-30px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Exibe o ícone de seta para voltar. */
         .carousel-control-prev-icon,
-        /* Exibe o ícone de seta para avançar. */
         .carousel-control-next-icon{
-            /* Aplica um filtro visual ao elemento. */
             filter: invert(1);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .carousel-indicators button para aplicar os estilos abaixo. */
         .carousel-indicators button {
-            /* Define a cor de fundo. */
             background-color: #02b8d8 !important;
-            /* Define a largura. */
             width: 12px !important;
-            /* Define a altura. */
             height: 12px !important;
-            /* Arredonda os cantos. */
             border-radius: 50%;
             
             
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
-        /* Seleciona .carousel-indicators .active para aplicar os estilos abaixo. */
         .carousel-indicators .active {
-            /* Define a cor de fundo. */
             background-color: #ffffff !important;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .carousel para aplicar os estilos abaixo. */
         .carousel{
-            /* Controla o conteúdo que ultrapassa os limites do elemento. */
             overflow:visible;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .btn-nintendo para aplicar os estilos abaixo. */
         .btn-nintendo {
-            /* Define a cor de fundo. */
             background-color: white;
-            /* Define a cor do texto. */
             color:  #00bbff;
-            /* Define a cor da borda. */
             border-color: #ffffff;
-            /* Arredonda os cantos. */
             border-radius: 25px;
-            /* Define o espaçamento interno. */
             padding: 4px 10px;
-            /* Define a espessura do texto. */
             font-weight: bold;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: 0.3s;
-            /* Define o espaçamento externo. */
             margin: 7px auto;
             
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
-        /* Seleciona .btn-nintendo:hover para aplicar os estilos abaixo. */
         .btn-nintendo:hover {
-            /* Define a cor de fundo. */
             background-color: #2d7d72;
-            /* Define a cor da borda. */
             border-color: #2d7d72;
-            /* Define a cor do texto. */
             color: white;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: scale(1.05);
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateY(-6px);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Comentário original do CSS: Cartões de evento */
         /*Cartões de evento */
-        /* Seleciona .eventos-section para aplicar os estilos abaixo. */
         .eventos-section {
-            /* Define o espaçamento interno. */
             padding: 40px 0;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .eventos-section h2 para aplicar os estilos abaixo. */
         .eventos-section h2 {
-            /* Define a cor do texto. */
             color: white;
-            /* Define a propriedade CSS text-align. */
             text-align: center;
-            /* Define o espaçamento externo inferior. */
             margin-bottom: 40px;
-            /* Define a espessura do texto. */
             font-weight: 700;
-            /* Define o tamanho da fonte. */
             font-size: 2.5rem;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card para aplicar os estilos abaixo. */
         .evento-card {
-            /* Define o fundo do elemento. */
             background: #2d3236;
-            /* Arredonda os cantos. */
             border-radius: 20px;
-            /* Controla o conteúdo que ultrapassa os limites do elemento. */
             overflow: hidden;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            /* Define a altura. */
             height: 100%;
-            /* Define a borda do elemento. */
             border: 2px solid transparent;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card:hover para aplicar os estilos abaixo. */
         .evento-card:hover {
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateY(-10px) scale(1.02);
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow: 0 15px 40px rgba(0, 187, 255, 0.25);
-            /* Define a cor da borda. */
             border-color: #00bbff;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-img para aplicar os estilos abaixo. */
         .evento-card-img {
-            /* Define o tipo de posicionamento. */
             position: relative;
-            /* Controla o conteúdo que ultrapassa os limites do elemento. */
             overflow: hidden;
-            /* Define a altura. */
             height: 200px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-img img para aplicar os estilos abaixo. */
         .evento-card-img img {
-            /* Define a largura. */
             width: 100%;
-            /* Define a altura. */
             height: 100%;
-            /* Define como a imagem se ajusta dentro da área disponível. */
             object-fit: cover;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: transform 0.5s ease;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card:hover .evento-card-img img para aplicar os estilos abaixo. */
         .evento-card:hover .evento-card-img img {
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: scale(1.1);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-img .badge-data para aplicar os estilos abaixo. */
         .evento-card-img .badge-data {
-            /* Define o tipo de posicionamento. */
             position: absolute;
-            /* Define a posição superior. */
             top: 15px;
-            /* Define a posição à direita. */
             right: 15px;
-            /* Define o fundo do elemento. */
             background: #00bbff;
-            /* Define a cor do texto. */
             color: white;
-            /* Define o espaçamento interno. */
             padding: 8px 15px;
-            /* Arredonda os cantos. */
             border-radius: 30px;
-            /* Define a espessura do texto. */
             font-weight: 700;
-            /* Define o tamanho da fonte. */
             font-size: 0.8rem;
-            /* Cria uma sombra ao redor do elemento. */
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body para aplicar os estilos abaixo. */
         .evento-card-body {
-            /* Define o espaçamento interno. */
             padding: 20px;
-            /* Define a cor do texto. */
             color: white;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body h5 para aplicar os estilos abaixo. */
         .evento-card-body h5 {
-            /* Define o tamanho da fonte. */
             font-size: 1.25rem;
-            /* Define a espessura do texto. */
             font-weight: 700;
-            /* Define o espaçamento externo inferior. */
             margin-bottom: 10px;
-            /* Define a cor do texto. */
             color: #00bbff;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .local para aplicar os estilos abaixo. */
         .evento-card-body .local {
-            /* Define o tamanho da fonte. */
             font-size: 0.9rem;
-            /* Define a cor do texto. */
             color: #adb5bd;
-            /* Define o espaçamento externo inferior. */
             margin-bottom: 8px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .local i para aplicar os estilos abaixo. */
         .evento-card-body .local i {
-            /* Define a cor do texto. */
             color: #00bbff;
-            /* Define o espaçamento externo direito. */
             margin-right: 5px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .descricao para aplicar os estilos abaixo. */
         .evento-card-body .descricao {
-            /* Define o tamanho da fonte. */
             font-size: 0.9rem;
-            /* Define a cor do texto. */
             color: #ced4da;
-            /* Define o espaçamento externo inferior. */
             margin-bottom: 15px;
-            /* Define como o elemento será exibido. */
             display: -webkit-box;
-            /* Define a propriedade CSS -webkit-line-clamp. */
             -webkit-line-clamp: 2;
-            /* Define a propriedade CSS -webkit-box-orient. */
             -webkit-box-orient: vertical;
-            /* Controla o conteúdo que ultrapassa os limites do elemento. */
             overflow: hidden;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .preco para aplicar os estilos abaixo. */
         .evento-card-body .preco {
-            /* Define o tamanho da fonte. */
             font-size: 1.4rem;
-            /* Define a espessura do texto. */
             font-weight: 700;
-            /* Define a cor do texto. */
             color: #00bbff;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .btn-comprar para aplicar os estilos abaixo. */
         .evento-card-body .btn-comprar {
-            /* Define o fundo do elemento. */
             background: #00bbff;
-            /* Define a cor do texto. */
             color: white;
-            /* Define a borda do elemento. */
             border: none;
-            /* Arredonda os cantos. */
             border-radius: 30px;
-            /* Define o espaçamento interno. */
             padding: 8px 25px;
-            /* Define a espessura do texto. */
             font-weight: 600;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: all 0.3s ease;
-            /* Define a propriedade CSS text-decoration. */
             text-decoration: none;
-            /* Define como o elemento será exibido. */
             display: inline-block;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .btn-comprar:hover para aplicar os estilos abaixo. */
         .evento-card-body .btn-comprar:hover {
-            /* Define o fundo do elemento. */
             background: #0099cc;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: scale(1.05);
-            /* Define a cor do texto. */
             color: white;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .btn-comprar i para aplicar os estilos abaixo. */
         .evento-card-body .btn-comprar i {
-            /* Define o espaçamento externo direito. */
             margin-right: 5px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .evento-card-body .row para aplicar os estilos abaixo. */
         .evento-card-body .row {
-            /* Define o alinhamento dos itens no eixo transversal. */
             align-items: center;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
 
-        /* Comentário original do CSS: FILTROS */
         /* FILTROS */
-        /* Seleciona .filtros-evento para aplicar os estilos abaixo. */
         .filtros-evento {
-            /* Define como o elemento será exibido. */
             display: flex;
-            /* Define o alinhamento dos itens no eixo principal. */
             justify-content: center;
-            /* Define o espaço entre os elementos. */
             gap: 15px;
-            /* Permite que itens flexíveis quebrem para a próxima linha. */
             flex-wrap: wrap;
-            /* Define o espaçamento externo inferior. */
             margin-bottom: 35px;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
-        /* Seleciona .filtros-evento .btn-filtro para aplicar os estilos abaixo. */
         .filtros-evento .btn-filtro {
-            /* Define o fundo do elemento. */
             background: transparent;
-            /* Define a borda do elemento. */
             border: 2px solid #40464b;
-            /* Define a cor do texto. */
             color: #adb5bd;
-            /* Define o espaçamento interno. */
             padding: 8px 25px;
-            /* Arredonda os cantos. */
             border-radius: 30px;
-            /* Define a espessura do texto. */
             font-weight: 600;
-            /* Define uma animação suave entre mudanças de estilo. */
             transition: all 0.3s ease;
-            /* Define o tamanho da fonte. */
             font-size: 0.9rem;
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
         .filtros-evento .btn-filtro:hover,
-        /* Seleciona .filtros-evento .btn-filtro.active para aplicar os estilos abaixo. */
         .filtros-evento .btn-filtro.active {
-            /* Define o fundo do elemento. */
             background: #00bbff;
-            /* Define a cor da borda. */
             border-color: #00bbff;
-            /* Define a cor do texto. */
             color: white;
-            /* Aplica uma transformação visual, como mover ou aumentar. */
             transform: translateY(-2px);
-        /* Encerra o bloco de estilos do seletor anterior. */
         }
 
 
-    /* Encerra os estilos CSS personalizados. */
     </style>
-  <!-- Encerra a área de configurações da página. -->
   </head>
-  <!-- Inicia o conteúdo visível da página. -->
   <body>
 
-     <!-- Inicia a barra de navegação principal. -->
      <nav class="navegacao navbar navbar-expand-lg navbar-dark sticky-top">
-        <!-- Cria um container do Bootstrap para organizar e centralizar o conteúdo. -->
         <div class="container">
-            <!-- Cria um link; neste caso, direciona para "./menu.php". -->
             <a class="marca-navegacao navbar-brand" href="./menu.php">
                 <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                 <span><img class="navbar-brand" src="assets/Logo-2-Vermelho-e-amarelo.png" alt="" width="100px" height="100px"></span>
             </a>
             <div class="collapse navbar-collapse" id="navegacaoPrincipal">
-                <!-- Inicia uma lista, usada aqui para os itens do menu. -->
                 <ul class="navbar-nav ms-auto">
-                    <!-- Cria um item da lista do menu. -->
-                        <!-- Cria um item da lista do menu. -->
+                    <li class="nav-item">
                         <li class="nav-item dropdown active">
-                    <!-- Cria um link; neste caso, direciona para "#". -->
-                    <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <!-- Cria um título menor usado nos itens principais da navegação. -->
+                    <a class="nav-link  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <h3><i class="fas fa-circle-plus"></i>  Novo Evento</h3>
                     </a>
-                     <!-- Inicia uma lista, usada aqui para os itens do menu. -->
                      <ul class="dropdown-menu">
-                        
+
                     </ul>
                     </li>
-                    <!-- Cria um item da lista do menu. -->
-                        <!-- Cria um item da lista do menu. -->
+                    <li class="nav-item">
                         <li class="nav-item dropdown active">
-                    <!-- Cria um link; neste caso, direciona para "#". -->
                     <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <!-- Cria um título menor usado nos itens principais da navegação. -->
                         <h3><i class="fas fa-calendar-alt"></i> Meus Eventos</h3>
                     </a>
-                     <!-- Inicia uma lista, usada aqui para os itens do menu. -->
                      <ul class="dropdown-menu">
-                        
+
                     </ul>
                     </li>
-                    <!-- Cria um item da lista do menu. -->
-                        <!-- Cria um item da lista do menu. -->
+                    <li class="nav-item">
                         <li class="nav-item dropdown active">
-                    <!-- Cria um link; neste caso, direciona para "#". -->
-                    <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <!-- Cria um título menor usado nos itens principais da navegação. -->
+                    <a class="nav-link  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <h3><i class="fas fa-ticket-alt"></i> Meus Ingressos</h3>
                     </a>
                     <!--MENU-->
-                     <!-- Inicia uma lista, usada aqui para os itens do menu. -->
                      <ul class="dropdown-menu">
-                        
+                        <li><a class="dropdown-item" href="Musica3/index.php"><i class="fas fa-music"></i> Musica</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Notas/classificacao_notas.php"><i class="fas fa-chart-line"></i> Média de Notas</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="VerificarIdade/Aula-02.php"><i class="fas fa-birthday-cake"></i> Verificar Idade</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/pedagio.php"><i class="fas fa-road"></i> Pedagío</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/Pontuacao.php"><i class="fas fa-star"></i> Pontuação de Crédito</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/Triagem.php"><i class="fas fa-hospital-user"></i> Triagem Hospitalar</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Tabuada_certa.php"><i class="fas fa-table"></i> Tabuada</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Mega_cena.php"><i class="fas fa-dice"></i> Mega Sena</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Tentativa.php"><i class="fas fa-lock"></i> Tentativa Senha</a></li>
                     </ul>
-                     </li>
-                    <!-- Cria um item da lista do menu. -->
-                     <!-- Cria um item do menu para sair do sistema. -->
-                     <li class="nav-item">
-                         <!-- Cria um botão/link para sair e voltar à página inicial. -->
-                         <a href="#" class="btn btn-secondary btn-nintendo"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                     </li>
-                <!-- Encerra a lista do menu. -->
+                    <li class="nav-item">
+                         <nav class="navbar bg-body>
+                        <div class="container-fluid>
+                        <a href="http://localhost/Aula1/NINTENDO_PHP/" class="btn btn-secondary btn-nintendo"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        </form>
+                         </div>
+                    </li>
                 </ul>
             </div>
         </div>
-    <!-- Encerra a barra de navegação. -->
     </nav>
 
 
@@ -649,83 +385,57 @@
     <!--CARROSSEL-->
 
 
-    <!-- Cria um container do Bootstrap para organizar e centralizar o conteúdo. -->
     <div class="container py-5">
 
-    <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
     <div id="carouselEventos" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
         <div class="carousel-indicators">
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="0" class="active"></button>
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="1"></button>
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="2"></button>
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="3"></button>
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="4"></button>
-            <!-- Cria um indicador que leva o carrossel até uma determinada imagem. -->
             <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="5"></button>
         </div>
 
-        <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
         <div class="carousel-inner">
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item active">
-                <!-- Exibe a imagem "imagens/evento1.webp". -->
                 <img src="imagens/evento1.webp" class="d-block w-100">
             </div>
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item">
-                <!-- Exibe a imagem "imagens/evento2.png". -->
                 <img src="imagens/evento2.png" class="d-block w-100">
             </div>
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item">
-                <!-- Exibe a imagem "imagens/evento3.jpg". -->
                 <img src="imagens/evento3.jpg" class="d-block w-100">
             </div>
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item">
-                <!-- Exibe a imagem "imagens/evento4.png". -->
                 <img src="imagens/evento4.png" class="d-block w-100">
             </div>
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item">
-                <!-- Exibe a imagem "imagens/evento5.png". -->
                 <img src="imagens/evento5.png" class="d-block w-100">
             </div>
 
-            <!-- Cria uma área do Bootstrap responsável pelo carrossel de imagens. -->
             <div class="carousel-item">
-                <!-- Exibe a imagem "imagens/evento6.jpg". -->
                 <img src="imagens/evento6.jpg" class="d-block w-100">
             </div>
 
         </div>
 
-        <!-- Cria o botão para voltar para a imagem anterior do carrossel. -->
         <button class="carousel-control-prev" type="button"
             data-bs-target="#carouselEventos" data-bs-slide="prev">
 
-            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
             <span class="carousel-control-prev-icon"></span>
 
         </button>
 
-        <!-- Cria o botão para avançar para a próxima imagem do carrossel. -->
         <button class="carousel-control-next" type="button"
             data-bs-target="#carouselEventos" data-bs-slide="next">
 
-            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
             <span class="carousel-control-next-icon"></span>
 
         </button>
@@ -735,61 +445,37 @@
 </div>
 
     <!-- SEÇÃO DE CARTÕES DE EVENTOS -->
-    <!-- Inicia uma seção da página dedicada aos eventos. -->
     <section class="eventos-section">
-        <!-- Cria um container do Bootstrap para organizar e centralizar o conteúdo. -->
         <div class="container">
-            <!-- Cria o título principal da seção de eventos. -->
             <h2><i class="fas fa-calendar-check" style="color: #00bbff;"></i> Próximos Eventos</h2>
 
     <!-- FILTROS -->
-            <!-- Agrupa os botões usados para filtrar os eventos. -->
             <div class="filtros-evento">
-                <!-- Cria um botão de filtro para os eventos. -->
                 <button class="btn-filtro"><i class="fas fa-th-list"></i> Todos</button>
-                <!-- Cria um botão de filtro para os eventos. -->
                 <button class="btn-filtro"><i class="fas fa-music"></i> Shows</button>
-                <!-- Cria um botão de filtro para os eventos. -->
                 <button class="btn-filtro"><i class="fas fa-utensils"></i> Gastronomia</button>
-                <!-- Cria um botão de filtro para os eventos. -->
                 <button class="btn-filtro"><i class="fas fa-laptop-code"></i> Tecnologia</button>
-                <!-- Cria um botão de filtro para os eventos. -->
                 <button class="btn-filtro"><i class="fas fa-paint-brush"></i> Arte</button>
             </div>
             
-            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
             <div class="row g-4">
 
                 <!-- Card 1 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento1.webp" com texto alternativo "Show Musical". -->
                             <img src="imagens/evento1.webp" alt="Show Musical">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 15 Set 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>happy day</h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Allianz Parque - SP</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">Venha curtir a melhor banda de rock alternativo com participações especiais e muito mais!</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 89,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -798,35 +484,21 @@
                 </div>
 
                 <!-- Card 2 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento2.png" com texto alternativo "Festival Gastronômico". -->
                             <img src="imagens/evento2.png" alt="Festival Gastronômico">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 22 Set 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>Mundo torajo</h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Centro de Convenções - RJ</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">Mais de 50 food trucks e chefs renomados com pratos de diversas culinárias do mundo.</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 59,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -835,35 +507,21 @@
                 </div>
 
                 <!-- Card 3 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento3.jpg" com texto alternativo "Maratona de Tecnologia". -->
                             <img src="imagens/evento3.jpg" alt="Maratona de Tecnologia">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 10 Out 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>Authentic Games</h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Expo Center - SP</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">O maior evento de tecnologia da América Latina com palestras, workshops e hackathon.</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 149,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -872,35 +530,21 @@
                 </div>
 
                 <!-- Card 4 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento4.png" com texto alternativo "Feira de Artesanato". -->
                             <img src="imagens/evento4.png" alt="Feira de Artesanato">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 05 Nov 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>Rock Rio</h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Parque Ibirapuera - SP</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">Exposição de artesãos locais com peças únicas, apresentações culturais e gastronomia.</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 29,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -909,35 +553,21 @@
                 </div>
 
                 <!-- Card 5 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento5.png" com texto alternativo "Festival de Música". -->
                             <img src="imagens/evento5.png" alt="Festival de Música">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 20 Nov 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>Valdisney</h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Marina da Glória - RJ</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">3 dias de muita música com bandas nacionais e internacionais em um cenário incrível.</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 199,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -946,36 +576,22 @@
                 </div>
 
                 <!-- Card 6 -->
-                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                 <div class="col-md-4">
-                    <!-- Cria o cartão visual de um evento. -->
                     <div class="evento-card">
-                        <!-- Cria a área da imagem do cartão. -->
                         <div class="evento-card-img">
-                            <!-- Exibe a imagem "imagens/evento6.jpg" com texto alternativo "Conferência de Marketing". -->
                             <img src="imagens/evento6.jpg" alt="Conferência de Marketing">
-                            <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                             <span class="badge-data"><i class="far fa-calendar-alt"></i> 05 Dez 2026</span>
                         </div>
-                        <!-- Cria a área de informações do cartão. -->
                         <div class="evento-card-body">
-                            <!-- Exibe o nome do evento. -->
                             <h5>ENALDINHO ENALDINHO CIRCO
                             </h5>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="local"><i class="fas fa-map-marker-alt"></i> Centro de Eventos - MG</p>
-                            <!-- Exibe um parágrafo com informações do evento. -->
                             <p class="descricao">As melhores estratégias e tendências do marketing digital com os maiores especialistas.</p>
-                            <!-- Cria uma linha do sistema de grid do Bootstrap. -->
                             <div class="row">
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6">
-                                    <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
                                     <span class="preco">R$ 79,90</span>
                                 </div>
-                                <!-- Cria uma coluna do sistema de grid do Bootstrap. -->
                                 <div class="col-6 text-end">
-                                    <!-- Cria um link; neste caso, direciona para "#". -->
                                     <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
                                 </div>
                             </div>
@@ -985,17 +601,11 @@
 
             </div>
         </div>
-        
-    <!-- Encerra a seção de eventos. -->
     </section>
 
 
-    <!-- Importa o JavaScript do Bootstrap, necessário para componentes como o menu dropdown e o carrossel. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <!-- Importa o arquivo JavaScript personalizado do projeto. -->
     <script src="script.js"></script>
 
-  <!-- Encerra o conteúdo visível da página. -->
   </body>
-<!-- Encerra o documento HTML. -->
 </html>
