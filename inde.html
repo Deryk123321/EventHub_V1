@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EventHub</title>
+    <!-- Define o ícone (favicon) usado na aba do navegador. -->
+    <link rel="icon" href="assets/Tipografia-da-logo-2-com-apenas-EH.png" type="image/x-icon">
+    <!-- Importa a biblioteca Font Awesome para utilizar ícones. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    
+  </head>
+  <body>
+
+     <nav class="navegacao navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="marca-navegacao navbar-brand" href="./menu.html">
+                <!-- Cria um elemento de texto em linha, usado aqui para organizar conteúdo e ícones. -->
+                <span><img class="navbar-brand" src="assets/Logo-2-Vermelho-e-amarelo.png" alt="" width="120px" height="100px"></span>
+            </a>
+            <div class="collapse navbar-collapse" id="navegacaoPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <li class="nav-item dropdown active">
+                    <a class="nav-link  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <h3><i class="fas fa-circle-plus"></i>  Novo Evento</h3>
+                    </a>
+                     <ul class="dropdown-menu">
+
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                        <li class="nav-item dropdown active">
+                    <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <h3><i class="fas fa-calendar-alt"></i> Meus Eventos</h3>
+                    </a>
+                     <ul class="dropdown-menu">
+
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                        <li class="nav-item dropdown active">
+                    <a class="nav-link  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <h3><i class="fas fa-ticket-alt"></i> Meus Ingressos</h3>
+                    </a>
+                    <!--MENU-->
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Musica3/index.php"><i class="fas fa-music"></i> Musica</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Notas/classificacao_notas.php"><i class="fas fa-chart-line"></i> Média de Notas</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="VerificarIdade/Aula-02.php"><i class="fas fa-birthday-cake"></i> Verificar Idade</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/pedagio.php"><i class="fas fa-road"></i> Pedagío</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/Pontuacao.php"><i class="fas fa-star"></i> Pontuação de Crédito</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Switch Case/atividades/Triagem.php"><i class="fas fa-hospital-user"></i> Triagem Hospitalar</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Tabuada_certa.php"><i class="fas fa-table"></i> Tabuada</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Mega_cena.php"><i class="fas fa-dice"></i> Mega Sena</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="Tabuada/Tentativa.php"><i class="fas fa-lock"></i> Tentativa Senha</a></li>
+                    </ul>
+                    <li class="nav-item">
+                         <nav class="navbar bg-body>
+                        <div class="container-fluid>
+                        <a href="http://localhost/Aula1/NINTENDO_PHP/" class="btn btn-secondary btn-nintendo"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        </form>
+                         </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--CARROSSEL-->
+
+    <div class="container py-5">
+
+    <div id="carouselEventos" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#carouselEventos" data-bs-slide-to="5"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="assets/evento1.webp" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/evento2.png" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/evento3.jpg" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/evento4.png" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/evento5.png" class="d-block w-100">
+            </div>
+
+            <div class="carousel-item">
+                <img src="assets/evento6.jpg" class="d-block w-100">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselEventos" data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselEventos" data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- SEÇÃO DE CARTÕES DE EVENTOS -->
+    <section class="eventos-section">
+        <div class="container">
+            <h2><i class="fas fa-calendar-check" style="color: #00bbff;"></i> Próximos Eventos</h2>
+
+    <!-- FILTROS -->
+            <div class="filtros-evento">
+                <button class="btn-filtro"><i class="fas fa-th-list"></i> Todos</button>
+                <button class="btn-filtro"><i class="fas fa-music"></i> Shows</button>
+                <button class="btn-filtro"><i class="fas fa-utensils"></i> Gastronomia</button>
+                <button class="btn-filtro"><i class="fas fa-laptop-code"></i> Tecnologia</button>
+                <button class="btn-filtro"><i class="fas fa-paint-brush"></i> Arte</button>
+            </div>
+            
+            <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento1.webp" alt="Show Musical">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 15 Set 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>happy day</h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Allianz Parque - SP</p>
+                            <p class="descricao">Venha curtir a melhor banda de rock alternativo com participações especiais e muito mais!</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 89,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento2.png" alt="Festival Gastronômico">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 22 Set 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>Mundo torajo</h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Centro de Convenções - RJ</p>
+                            <p class="descricao">Mais de 50 food trucks e chefs renomados com pratos de diversas culinárias do mundo.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 59,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento3.jpg" alt="Maratona de Tecnologia">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 10 Out 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>Authentic Games</h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Expo Center - SP</p>
+                            <p class="descricao">O maior evento de tecnologia da América Latina com palestras, workshops e hackathon.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 149,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento4.png" alt="Feira de Artesanato">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 05 Nov 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>Rock Rio</h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Parque Ibirapuera - SP</p>
+                            <p class="descricao">Exposição de artesãos locais com peças únicas, apresentações culturais e gastronomia.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 29,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento5.png" alt="Festival de Música">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 20 Nov 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>Valdisney</h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Marina da Glória - RJ</p>
+                            <p class="descricao">3 dias de muita música com bandas nacionais e internacionais em um cenário incrível.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 199,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-card-img">
+                            <img src="assets/evento6.jpg" alt="Conferência de Marketing">
+                            <span class="badge-data"><i class="far fa-calendar-alt"></i> 05 Dez 2026</span>
+                        </div>
+                        <div class="evento-card-body">
+                            <h5>ENALDINHO ENALDINHO CIRCO
+                            </h5>
+                            <p class="local"><i class="fas fa-map-marker-alt"></i> Centro de Eventos - MG</p>
+                            <p class="descricao">As melhores estratégias e tendências do marketing digital com os maiores especialistas.</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span class="preco">R$ 79,90</span>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="btn-comprar"><i class="fas fa-ticket-alt"></i> Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
